@@ -10,16 +10,15 @@ use Tests\TestCase;
 class ArticleControllerTest extends TestCase
 {
     use RefreshDatabase;
-
     /**
-    * @test
+     * @test
     */
     public function testIndex()
     {
         $response = $this->get(route('articles.index'));
 
         $response->assertStatus(200)
-        ->assertViewIs('articles.index');
+            ->assertViewIs('articles.index');
     }
 
     public function testGuestCreate()
